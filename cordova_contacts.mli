@@ -156,35 +156,35 @@ module Contact : sig
   [@@js.builder]
 
   (* A globally unique identifier. *)
-  val id            : string option
+  val id            : t -> string option
   (* The name of this Contact, suitable for display to end users. *)
-  val display_name  : string option
+  val display_name  : t -> string option
   (* An object containing all components of a persons name. *)
-  val name          : ContactName.t option
+  val name          : t -> ContactName.t option
   (* A casual name by which to address the contact. *)
-  val nick_name     : string option
+  val nick_name     : t -> string option
   (* An array of all the contact's phone numbers. *)
-  val phone_numbers : ContactField.t list option
+  val phone_numbers : t -> ContactField.t list option
   (* A list of all the contact's email addresses. *)
-  val emails        : ContactField.t list option
+  val emails        : t -> ContactField.t list option
   (* A list of all the contact's addresses. *)
-  val addresses     : ContactAddress.t list option
+  val addresses     : t -> ContactAddress.t list option
   (* A list of all the contact's IM addresses. *)
-  val ims           : ContactField.t list option
+  val ims           : t -> ContactField.t list option
   (* A list of all the contact's organizations. *)
-  val organizations : ContactOrganization.t list option
+  val organizations : t -> ContactOrganization.t list option
   (* The birthday of the contact. *)
   (* Js_date is defined in the binding of the javascript standard library. See
      * documentation *)
-  val birthday      : Js_date.t option
+  val birthday      : t -> Js_date.t option
   (*  A note about the contact. *)
-  val note          : string option
+  val note          : t -> string option
   (* A list of the contact's photos. *)
-  val photos        : ContactField.t list option
+  val photos        : t -> ContactField.t list option
   (* A list of all the user-defined categories associated with the contact. *)
-  val categories    : ContactField.t list option
+  val categories    : t -> ContactField.t list option
   (* A list of web pages associated with the contact. *)
-  val urls          : ContactField.t list option
+  val urls          : t -> ContactField.t list option
 
   val clone         : t -> t
   (* Removes the contact from the device contacts database, otherwise executes
