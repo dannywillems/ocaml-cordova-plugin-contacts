@@ -174,9 +174,11 @@ module Contact : sig
   (* A list of all the contact's organizations. *)
   val organizations : t -> ContactOrganization.t list option
   (* The birthday of the contact. *)
+
   (* Js_date is defined in the binding of the javascript standard library. See
      * documentation *)
   val birthday      : t -> Js_date.t option
+
   (*  A note about the contact. *)
   val note          : t -> string option
   (* A list of the contact's photos. *)
